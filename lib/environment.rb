@@ -1,4 +1,7 @@
+require "httparty"
+require "pry"
 require "meal_time/version"
+
 
 module MealTime
   class Error < StandardError; end
