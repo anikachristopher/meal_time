@@ -1,6 +1,11 @@
 require "httparty"
 require "pry"
-require "meal_time/version"
+
+
+require_relative "meal_time/version"
+require_relative "meal_time/api"
+require_relative "meal_time/cli"
+require_relative "meal_time/meal"
 
 
 module MealTime
