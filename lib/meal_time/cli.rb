@@ -7,12 +7,12 @@ class MealTime::CLI
     def menu 
         puts "Which category of meals would you like to get more info on?"
 
-        input = gets.strip
+        input = gets.strip #removing spaces fron the front and end
 
-        MealTime::API.query
+        MealTime::API.query_meal_db(input)
     end 
 
 
-    https://www.themealdb.com/api/json/v1/1
+    
 
 end
