@@ -44,9 +44,9 @@ class MealTime::CLI
         puts ""
         puts "idMeal: #{meal.idMeal}" 
         puts "strMeal: #{meal.strMeal}" 
-        puts "strCategory: #{meal.strCategory}" 
-        puts "strInstructions: #{meal.strInstructions}" 
-        puts "strArea: #{meal.strArea}" #creating the objects
+        # puts "strCategory: #{meal.strCategory}" 
+        # puts "strInstructions: #{meal.strInstructions}" 
+        # puts "strArea: #{meal.strArea}" #creating the objects
     
        
         else 
