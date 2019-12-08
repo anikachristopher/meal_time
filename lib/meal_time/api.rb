@@ -19,8 +19,14 @@ class MealTime::API
         #we will initialize a category object
     end
 
-    def self.category_info(category_instance)
-        
+    #def self.category_info(category_instance)
+     #   category_info_response = HTTParty.get(BASE_URL) 
+      #  category_info_response
+    #end 
+
+    def self.category_meals(category_instance)
+        #binding.pry
+        category_meals_response = HTTParty.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=#{category_instance}")   
     end
 
     # def seafood_meals_db(query)

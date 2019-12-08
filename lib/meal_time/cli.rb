@@ -25,9 +25,14 @@ class MealTime::CLI
         input = gets.strip
         if (1..MealTime::Categories.all.size).include?(input.to_i)
             category = MealTime::Categories.all[input.to_i - 1]
+
+        selected_category = category.strCategory
+        description = category.strCategoryDescription
+        puts "#{selected_category}: #{description}" #the category and it's description 
+        else 
+            puts "Invalid Option. Please choose another category number."
+            menu
         end
-            binding.pry
-            puts "#{category[0]["strCategory"]}, #{category[0]["strCategoryDescription"]}" #the category and it's description 
     end  
 
     #     MealTime::Meals.all.each_with_index do |c, i|
