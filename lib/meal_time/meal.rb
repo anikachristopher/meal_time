@@ -1,5 +1,18 @@
-!#/usr/bin/env/ruby
+class MealTime::Meals
 
-require_relative '../lib.meal_time.db'
+    attr_accessor :strMeal, :strMealThumb, :idMeal
 
-MealTime::CLI
+    @@all = []
+
+    def initialize(args)
+        args.each do |k,v|
+            self.send("#{k}=", v)
+        end
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
+
+end
