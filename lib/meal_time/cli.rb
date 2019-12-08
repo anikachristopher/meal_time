@@ -1,4 +1,5 @@
 class MealTime::CLI
+    
     def call
         puts "Welcome to the Meals Database!"
         menu
