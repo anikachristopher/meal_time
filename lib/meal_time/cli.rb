@@ -12,6 +12,7 @@ class MealTime::CLI
 
     def menu 
         puts "This is a list of categories available for viewing:"
+        sleep 3
 
         MealTime::API.meal_category_db
         MealTime::Categories.all.each.with_index do |c, i|
@@ -36,25 +37,21 @@ class MealTime::CLI
     end  
 
     def new_search
-        puts "Would you like to choose anther category number? Please enter 'Yes' or 'No'."
-            input = gets.strip
-        if input === "exit"
-            puts "Thanks for visiting Meal Time CLI! Visit again soon!"
-            thank_you
-        else 
+        puts "Would you like to choose another category number? Please enter 'Yes' or 'No'."
+            input = gets.chomp.downcase
             case input
-            when 'Yes' puts 
+            when input == "Yes"
+                menu
+            when input == "No"
+            thank_you 
+        else 
+            puts "I do not understand that selection. Please choose 'Yes' or 'No'."
+            thank_you
         end
-        puts ""
-        puts "If you would lik"
     end    
 
     def thank_you
         puts "Thanks for visiting Meal Time CLI! Visit again soon!"
-    end
-
+    end 
     
-end    
-
-
-    
+end

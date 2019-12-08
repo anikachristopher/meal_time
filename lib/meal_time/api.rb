@@ -1,9 +1,6 @@
 class MealTime::API
 
-    BASE_URL= 'https://www.themealdb.com/api/json/v1/1/categories.php' 
-    # CHK_URL 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken'
-    # SEAF_URL= 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
-    # BEEF_URL= 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef'
+    BASE_URL= 'https://www.themealdb.com/api/json/v1/1/categories.php'
     
     
     def self.meal_category_db
@@ -29,12 +26,6 @@ class MealTime::API
         category_meals_response = HTTParty.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=#{category_instance}")   
     end
 
-    # def seafood_meals_db(query)
-    #     response = HTTParty.get(SEAF_URL)
-    # end
-
-    # def beef_meals_db(query)
-    #     response = HTTParty.get(BEEF_URL)
-    # end
+   
 
 end
