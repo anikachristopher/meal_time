@@ -43,9 +43,9 @@ class MealTime::CLI
 
         input = gets.strip
         case input
-        when yes
+        when "yes"
         menu
-        when no
+        when "no"
         thank_you 
         else 
         puts "I do not understand that selection."
