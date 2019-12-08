@@ -8,9 +8,9 @@ attr_accessor :idCategory, :strCategory, :strCategoryDescription
 
 def initialize(args)
     args.each do |k,v|
-        self.send(("#{k}="), v)
+        self.send(("#{k}="), v) if self.respond_to?(k)
     
-    @@all << self
+    @@all << self unless @@all.include?(self)
     end    
 
 end

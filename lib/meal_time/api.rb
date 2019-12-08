@@ -9,8 +9,10 @@ class MealTime::API
     def self.meal_category_db
         response = HTTParty.get(BASE_URL)
         response["categories"].each do |category| 
-        #binding.pry
         MealTime::Categories.new(category)
+        #MealTime::Categories.new(category)
+        #binding.pry
+        
         end
 
         #this class will iterate through list of info pulled from the API list of categories

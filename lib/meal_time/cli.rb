@@ -5,9 +5,9 @@ class MealTime::CLI
         puts "Hi! Welcome to the Meals Database!"
         sleep 1
         menu
-        category_selection 
-        next_option
-        thank_you #for visitng
+        # category_selection 
+        # next_option
+        # thank_you #for visitng
     end
 
     def menu 
@@ -16,6 +16,7 @@ class MealTime::CLI
         MealTime::API.meal_category_db
         MealTime::Categories.all.each.with_index do |c, i|
             puts "#{i + 1}. #{c.strCategory}" #puts out new number and category name
+            #binding.pry
         end
     end
 
