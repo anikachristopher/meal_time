@@ -19,8 +19,8 @@ class MealTime::CLI
         thank_you
         else 
         MealTime::API.meal_category_db(input)
-        MealTime::Categories.all.each.with_index do |c, i|
-        puts "#{i + 1}. #{c.strCategory}"
+        MealTime::Meals.all.each.with_index do |c, i|
+        puts "#{i + 1}. #{c.meals}"
         end
     end 
     end    
