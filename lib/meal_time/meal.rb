@@ -1,23 +1,23 @@
-class MealTime::Meals
+# class MealTime::Meals
 
-    attr_accessor :idMeal, :strMeal, :strMealThumb
+#     attr_accessor :idMeal, :strMeal, :strMealThumb
 
-    @@all = []
+#     @@all = []
 
-    def initialize(args)
-        args.each do |k,v|
-            self.send(("#{k}="), v)
+#     def initialize(args)
+#         args.each do |k,v|
+#             self.send(("#{k}="), v)
         
-        @@all << self
-        end    
+#         @@all << self
+#         end    
 
-    end
+#     end
 
-    def self.all
-        @@all
-    end
+#     def self.all
+#         @@all
+#     end
 
-end
+# end
 
 
 #:strCategoryDescription

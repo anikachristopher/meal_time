@@ -1,14 +1,15 @@
 class MealTime::API
 
     BASE_URL= 'https://www.themealdb.com/api/json/v1/1/filter.php?'
-    
+    ROOT_URL= 'https://www.themealdb.com/api/json/v1/1/search.php?'
     
     def self.meal_category_db(query)
         response = HTTParty.get(BASE_URL + "c=#{query}")
+        #binding.pry 
         response["meals"].each do |meals_hash| 
         MealTime::Meals.new(meals_hash)
         #MealTime::Categories.new(category)
-        #binding.pry
+        
         
         end
 
@@ -21,10 +22,16 @@ class MealTime::API
       #  category_info_response
     #end 
 
-    def self.category_meals(category_instance)
-        #binding.pry
-        category_meals_response = HTTParty.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=#{category_instance}")   
+    def self.get_specific_meal_db(meal)
+        if !meal.strMeal
+        response = HTTParty.get(ROOT_URL + "s=#{meal}")
+        MealTime::Meals.more_info(response)
     end
+end
+    # def self.category_meals(category_instance)
+    #     #binding.pry
+    #     category_meals_response = HTTParty.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=#{category_instance}")   
+    # end
 
    
 

@@ -19,8 +19,8 @@ class MealTime::CLI
         thank_you
         else 
         MealTime::API.meal_category_db(input)
-        MealTime::Meals.all.each.with_index do |c, i|
-        puts "#{i + 1}. #{c.meals}"
+        MealTime::Meals.all.each.with_index do |m, i|
+        puts "#{i + 1}. #{m.strMeal}"
         end
     end 
     end    
@@ -42,18 +42,28 @@ class MealTime::CLI
         puts "Choose a category number to see more info!"
         puts ""
         input = gets.strip
+        #binding.pry
         if input === exit
             thank_you
-        end
-        if (1..MealTime::Categories.all.size).include?(input.to_i)
-        category = MealTime::Categories.all[input.to_i - 1]
-        selected_category = category.strCategory
-        description = category.strCategoryDescription
-        puts "#{selected_category}: #{description}" #the category and it's description 
+        
+        elsif (1..MealTime::Meals.all.size).include?(input.to_i)
+        meal = MealTime::Meals.all[input.to_i - 1]
+        #selected_category = category.strCategory
+        MealTime::API.get_specific_meal_db(meal)
+        #description = category.strMeal
+        #puts "#{selected_category}: #{idMeal}" #the category and it's description 
+        puts ""
+        puts "idMeal: #{meal.idMeal}" 
+        puts "strMeal: #{meal.strMeal}" 
+        puts "strCategory: #{meal.strCategory}" 
+        puts "strInstructions: #{meal.strInstructions}" 
+    
+       
         else 
             puts "Sorry...I don't understand that selection, please choose another category number!"
             menu
         end
+    
     end  
 
     def new_search
