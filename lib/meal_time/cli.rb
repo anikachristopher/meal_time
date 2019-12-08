@@ -3,6 +3,7 @@ class MealTime::CLI
     def call
         puts ""
         puts "Hi! Welcome to the Meals Database!"
+        puts ""
         sleep 1
         menu
         category_selection 
@@ -12,6 +13,7 @@ class MealTime::CLI
 
     def menu 
         puts "This is a list of categories available for viewing:"
+        puts ""
         sleep 1
 
         MealTime::API.meal_category_db
@@ -22,34 +24,37 @@ class MealTime::CLI
     end
 
     def category_selection
+        puts ""
         puts "Choose a category number to see more info!"
+        puts ""
         input = gets.strip
         if (1..MealTime::Categories.all.size).include?(input.to_i)
             category = MealTime::Categories.all[input.to_i - 1]
-
         selected_category = category.strCategory
         description = category.strCategoryDescription
         puts "#{selected_category}: #{description}" #the category and it's description 
         else 
-            puts "Sorry...I don't understand that selection."
-            puts "Please choose another category number!"
+            puts "Sorry...I don't understand that selection, please choose another category number!"
             menu
         end
     end  
 
     def new_search
+        puts ""
         puts "Would you like to choose another category number?" 
         puts "Please enter yes or no."
+        puts ""
 
         input = gets.strip
         case input
-        when "yes"
-        menu
-        when "no"
-        thank_you 
+            when "yes"
+            menu
+            category_selection
+            when "no"
+            thank_you 
         else 
-        puts "I do not understand that selection."
-        category_selection
+            puts "I do not understand that selection."
+            category_selection
         end
     end    
 
