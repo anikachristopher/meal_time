@@ -2,7 +2,8 @@ class MealTime::Meals
 #this class will initialize with the category attributes
 #it will save all instances of itself in the @@all class
 #need a mtehod to read the @@all class
-attr_accessor :idMeal, :strMeal, :idMeal, :strCategory, :strArea, :strInstructions
+attr_accessor :idMeal, :strMeal, :strCategory, :strInstructions, :strArea
+
 
 @@all = []
 

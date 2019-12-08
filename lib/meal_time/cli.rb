@@ -6,14 +6,13 @@ class MealTime::CLI
         puts ""
         sleep 1
         search 
-        #menu
         category_selection 
         new_search
         thank_you
     end
 
     def search
-        puts "Which entree would you like to choose from?:"
+        puts "Which category of entree would you like to choose from: Beef, Pork or Seafood?:"
         input = gets.strip
         if input === "exit"
         thank_you
@@ -25,50 +24,41 @@ class MealTime::CLI
     end 
     end    
 
-    # def menu 
-    #     puts "This is a list of categories available for viewing:"
-    #     puts ""
-    #     sleep 1
 
-    #     MealTime::API.meal_category_db(input)
-    #     MealTime::Categories.all.each.with_index do |c, i|
-    #         puts "#{i + 1}. #{c.strCategory}" #puts out new number and category name
-    #         #binding.pry
-    #     end
-    #end
 
     def category_selection
         puts ""
-        puts "Choose a category number to see more info!"
+        puts "Choose a number to see more info!"
         puts ""
         input = gets.strip
-        #binding.pry
-        if input === exit
-            thank_you
+    
+        # if input === exit
+        #     thank_you
+        # end
         
-        elsif (1..MealTime::Meals.all.size).include?(input.to_i)
+        if (1..MealTime::Meals.all.size).include?(input.to_i)
+
         meal = MealTime::Meals.all[input.to_i - 1]
-        #selected_category = category.strCategory
         MealTime::API.get_specific_meal_db(meal)
-        #description = category.strMeal
-        #puts "#{selected_category}: #{idMeal}" #the category and it's description 
+
         puts ""
         puts "idMeal: #{meal.idMeal}" 
         puts "strMeal: #{meal.strMeal}" 
         puts "strCategory: #{meal.strCategory}" 
         puts "strInstructions: #{meal.strInstructions}" 
+        puts "strArea: #{meal.strArea}" #creating the objects
     
        
         else 
-            puts "Sorry...I don't understand that selection, please choose another category number!"
-            menu
-        end
+            puts "Sorry...I don't understand that selection, please choose another category!"
+    
+         end
     
     end  
 
     def new_search
         puts ""
-        puts "Would you like to choose another category number?"
+        puts "Would you like to choose another category?"
         puts "Please enter yes or no."
         puts ""
 
@@ -78,13 +68,15 @@ class MealTime::CLI
         end
         case input
             when "yes"
-            menu
+            MealTime::Meals.all.clear   
+            search
             category_selection
+            new_search
             when "no"
-            thank_you 
+
         else 
             puts "I do not understand that selection."
-            category_selection
+            puts "Type yes or no."
         end
     end    
 
