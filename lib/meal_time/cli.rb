@@ -6,8 +6,8 @@ class MealTime::CLI
         sleep 1
         menu
         category_selection 
-        # next_option
-        # thank_you #for visitng
+        new_search
+        thank_you
     end
 
     def menu 
@@ -30,21 +30,29 @@ class MealTime::CLI
         description = category.strCategoryDescription
         puts "#{selected_category}: #{description}" #the category and it's description 
         else 
-            puts "Invalid Option. Please choose another category number."
+            puts "I don't understand that selection. Please choose another category number."
             menu
         end
     end  
 
-    #     MealTime::Meals.all.each_with_index do |c, i|
-    #         puts "#{i + 1}".
-    #     end
+    def new_search
+        puts "Would you like to choose anther category number? Please enter 'Yes' or 'No'."
+            input = gets.strip
+        if input === "exit"
+            puts "Thanks for visiting Meal Time CLI! Visit again soon!"
+            thank_you
+        else 
+            case input
+            when 'Yes' puts 
+        end
+        puts ""
+        puts "If you would lik"
+    end    
 
-    #  def user_selection
-    #     input = gets.strip.downcase
-    #     if input = exit   
-    #     else 
-    #         puts "Sorry, this is an invalid option. Please make another choice!"
-    #         menu
+    def thank_you
+        puts "Thanks for visiting Meal Time CLI! Visit again soon!"
+    end
+
     
 end    
 
