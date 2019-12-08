@@ -19,9 +19,9 @@ class MealTime::CLI
         MealTime::
     end
 
-    def category_selection
+    # def category_selection
 
-       
+    # end  
 
     #     MealTime::Meals.all.each_with_index do |c, i|
     #         puts "#{i + 1}".
@@ -33,10 +33,8 @@ class MealTime::CLI
     #     else 
     #         puts "Sorry, this is an invalid option. Please make another choice!"
     #         menu
-        end
     
+end    
 
 
     
-
-end
