@@ -13,10 +13,10 @@ class MealTime::CLI
     def menu 
         puts "This is a list of categories available for viewing:"
 
-        category = gets.strip #removing spaces fron the front and end
-
-        MealTime::API.meal_db
-        MealTime::
+        MealTime::API.meal_category_db
+        MealTime::Categories.all.each.with_index do |c, i|
+            puts "#{i + 1}. #{c.strCategory}" #puts out new number and category name
+        end
     end
 
     # def category_selection
