@@ -3,6 +3,9 @@ class MealTime::CLI
     def call
         puts "Welcome to the Meals Database!"
         menu
+        user_selection #more_info
+        another_option
+        thank_you #for visitng
     end
 
     def menu 
