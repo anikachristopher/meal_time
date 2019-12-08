@@ -5,7 +5,7 @@ class MealTime::CLI
         puts "Hi! Welcome to the Meals Database!"
         sleep 1
         menu
-        # category_selection 
+        category_selection 
         # next_option
         # thank_you #for visitng
     end
@@ -20,9 +20,15 @@ class MealTime::CLI
         end
     end
 
-    # def category_selection
-
-    # end  
+    def category_selection
+        puts "Choose a category number to see more info!"
+        input = gets.strip
+        if (1..MealTime::Categories.all.size).include?(input.to_i)
+            category = MealTime::Categories.all[input.to_i - 1]
+        end
+            binding.pry
+            puts "#{category[0]["strCategory"]}, #{category[0]["strCategoryDescription"]}" #the category and it's description 
+    end  
 
     #     MealTime::Meals.all.each_with_index do |c, i|
     #         puts "#{i + 1}".
