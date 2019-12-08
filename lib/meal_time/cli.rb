@@ -2,7 +2,7 @@ class MealTime::CLI
     
     def call
         puts ""
-        puts "Hi! Welcome to the Meals Database!"
+        puts "Hi! Welcome to the Meals Database!".colorize(:blue)
         puts ""
         sleep 1
         menu
@@ -12,7 +12,7 @@ class MealTime::CLI
     end
 
     def menu 
-        puts "This is a list of categories available for viewing:"
+        puts "This is a list of categories available for viewing:".colorize(:green)
         puts ""
         sleep 1
 
@@ -25,7 +25,7 @@ class MealTime::CLI
 
     def category_selection
         puts ""
-        puts "Choose a category number to see more info!"
+        puts "Choose a category number to see more info!".colorize(:blue)
         puts ""
         input = gets.strip
         if (1..MealTime::Categories.all.size).include?(input.to_i)
@@ -34,15 +34,15 @@ class MealTime::CLI
         description = category.strCategoryDescription
         puts "#{selected_category}: #{description}" #the category and it's description 
         else 
-            puts "Sorry...I don't understand that selection, please choose another category number!"
+            puts "Sorry...I don't understand that selection, please choose another category number!".colorize(:red)
             menu
         end
     end  
 
     def new_search
         puts ""
-        puts "Would you like to choose another category number?" 
-        puts "Please enter yes or no."
+        puts "Would you like to choose another category number?".colorize(:orange) 
+        puts "Please enter yes or no.".colorize(:red)
         puts ""
 
         input = gets.strip
@@ -53,13 +53,13 @@ class MealTime::CLI
             when "no"
             thank_you 
         else 
-            puts "I do not understand that selection."
+            puts "I do not understand that selection.".colorize(:red)
             category_selection
         end
     end    
 
     def thank_you
-        puts "Thanks for visiting Meal Time CLI! Visit again soon!"
+        puts "Thanks for visiting Meal Time CLI! Visit again soon!".colorize(:blue)
     end 
     
 end
