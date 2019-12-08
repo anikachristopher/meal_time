@@ -1,6 +1,6 @@
 class MealTime::Meals
 
-    attr_accessor :idCategory, :strCategory, :strCategoryThumb, :strCategoryDescription
+    attr_accessor :idCategory, :strCategory, :strCategoryDescription
 
     @@all = []
 
