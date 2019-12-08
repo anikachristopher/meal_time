@@ -1,6 +1,10 @@
 # MealTime
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/meal_time`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to Meal Time Command Line Interface! This application provides the user with a directory of meals by category. There are 28 categories in total and with a simple entry of number choice, users are displayed detailed information about the category.
+
+
+
+In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/meal_time`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 

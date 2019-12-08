@@ -1,12 +1,12 @@
 class MealTime::API
 
-    BASE_URL= 'https://www.themealdb.com/api/json/v1/1/categories.php'
+    BASE_URL= 'https://www.themealdb.com/api/json/v1/1/filter.php?'
     
     
-    def self.meal_category_db
-        response = HTTParty.get(BASE_URL)
-        response["categories"].each do |category| 
-        MealTime::Categories.new(category)
+    def self.meal_category_db(query)
+        response = HTTParty.get(BASE_URL + "c=#{query}")
+        response["meals"].each do |meals_hash| 
+        MealTime::Meals.new(meals_hash)
         #MealTime::Categories.new(category)
         #binding.pry
         
