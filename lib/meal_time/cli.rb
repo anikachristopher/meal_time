@@ -32,9 +32,6 @@ class MealTime::CLI
         puts ""
         input = gets.strip
     
-        # if input === exit
-        #     thank_you
-        # end
         
         if (1..MealTime::Meals.all.size).include?(input.to_i)
 
@@ -44,9 +41,7 @@ class MealTime::CLI
         puts ""
         puts "idMeal: #{meal.idMeal}" 
         puts "strMeal: #{meal.strMeal}" 
-        # puts "strCategory: #{meal.strCategory}" 
-        # puts "strInstructions: #{meal.strInstructions}" 
-        # puts "strArea: #{meal.strArea}" #creating the objects
+    
     
        
         else 

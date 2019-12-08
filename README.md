@@ -1,6 +1,8 @@
 # MealTime
 
-Welcome to Meal Time Command Line Interface! This application provides the user with a directory of meals by category. There are 28 categories in total and with a simple entry of number choice, users are displayed detailed information about the category.
+Welcome to Meal Time Command Line Interface! This application provides the user with a directory of meals by category which they can select from to view more information. 
+
+To 
 
 
 
