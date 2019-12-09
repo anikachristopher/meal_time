@@ -8,12 +8,13 @@ class MealTime::API
         response = HTTParty.get(BASE_URL + "c=#{query}")
         response["meals"].each do |meals_hash| 
         MealTime::Meals.new(meals_hash)
+
         end
 
     end
 
     def self.get_specific_meal_db(meal)
-        response = HTTParty.get(ROOT_URL + "s=#{@strMeal}")
+        response = HTTParty.get(ROOT_URL + "s=#{meal.strMeal}")
         @meal_info = response["meals"]
           @meal_info
         
