@@ -5,19 +5,9 @@ Welcome to Meal Time Command Line Interface! This application provides the user 
 
 ## Installation
 
-Install this gem by running  $ gem install meal_time. You can then run bin/meal_time to be fully immersed into the CLI.
+You can install this gem by typing the following prompt in your terminal: $ gem install meal_time.
 
-```ruby
-gem 'meal_time'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install meal_time
+The meal_time CLI will be installed and you can run bin/meal_time to get a list of meal areas right in your command line.
 
 ## Usage
 
