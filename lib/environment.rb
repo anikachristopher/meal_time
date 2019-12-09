@@ -3,6 +3,7 @@ require "pry"
 require "json"
 require "rest-client"
 require "exits"
+require "colorize"
 
 
 require_relative "./meal_time/version"

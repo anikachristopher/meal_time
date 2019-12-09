@@ -8,20 +8,22 @@ class MealTime::API
         response = HTTParty.get(BASE_URL + "c=#{query}")
         response["meals"].each do |meals_hash| 
         MealTime::Meals.new(meals_hash)
-        
         end
 
     end
 
-
-
     def self.get_specific_meal_db(meal)
-        if !meal.strMeal
-        #binding.pry
-        response = HTTParty.get(ROOT_URL + "s=#{meal}")
-        MealTime::Meals.more_info(response)
+        response = HTTParty.get(ROOT_URL + "s=#{@strMeal}")
+        # MealTime::Meals.more_info(response)
+        # if !meal.strMeal
+        @meal_info = response["meals"]
+          @meal_info
+        
+          #repeat for each attribute and save to their own InsVar and then create new instances of the meal class and pass them in as the arguments
+            
+          #meal_time = meals.new and pass in other attributes created
     end
 end
 
-
-end
+# response["meals"]
+# 
