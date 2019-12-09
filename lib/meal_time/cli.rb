@@ -10,7 +10,7 @@ class MealTime::CLI
     end
 
     def search
-        puts "Which category of entree would you like to choose from: Beef, Pork or Seafood?:".colorize(:blue)
+        puts "Which category of entree would you like to choose from: Beef, Pork or Seafood?:"
         input = gets.strip.capitalize
         if input === "Exit"
             thank_you
@@ -30,13 +30,13 @@ class MealTime::CLI
         meal = MealTime::API.get_specific_meal_db(meal_info)
             
         puts ""
-        puts "Meal ID: #{meal[0]["idMeal"]}".colorize(:blue)
+        puts "Meal ID: #{meal[0]["idMeal"]}"
         puts""
-        puts "Meal Name: #{meal[0]["strMeal"]}".colorize(:magenta)
+        puts "Meal Name: #{meal[0]["strMeal"]}"
         puts ""
-        puts "Area: #{meal[0]["strArea"]}".colorize(:red)
+        puts "Area: #{meal[0]["strArea"]}"
         puts ""
-        puts "Category: #{meal[0]["strCategory"]}" .colorize(:cyan)
+        puts "Category: #{meal[0]["strCategory"]}"
         puts ""
         puts "Instructions: #{meal[0]["strInstructions"]}".colorize(:green)
         puts ""
@@ -46,7 +46,7 @@ class MealTime::CLI
 
     def category_selection
         puts ""
-        puts "Choose a number to see more info!".colorize(:yellow)
+        puts "Choose a number to see more info!"
         puts ""
         input = gets.strip
         
@@ -62,8 +62,8 @@ class MealTime::CLI
 
     def new_search
         puts ""
-        puts "Would you like to choose another category?".colorize(:red)
-        puts "Please enter yes or no.".colorize(:red)
+        puts "Would you like to choose another category?"
+        puts "Please enter yes or no."
         puts ""
         options
 
