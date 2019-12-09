@@ -14,16 +14,8 @@ class MealTime::API
 
     def self.get_specific_meal_db(meal)
         response = HTTParty.get(ROOT_URL + "s=#{@strMeal}")
-        # MealTime::Meals.more_info(response)
-        # if !meal.strMeal
         @meal_info = response["meals"]
           @meal_info
         
-          #repeat for each attribute and save to their own InsVar and then create new instances of the meal class and pass them in as the arguments
-            
-          #meal_time = meals.new and pass in other attributes created
     end
 end
-
-# response["meals"]
-# 
