@@ -21,7 +21,7 @@ class MealTime::CLI
             end
             category_selection
         else 
-            puts "Sorry...I don't understand that selection, please choose another number!".colorize(:red)  
+            puts "Sorry...I don't understand that selection, please make a valid choice!".colorize(:red)  
             search
         end  
     end    
@@ -55,7 +55,7 @@ class MealTime::CLI
             meal_info(meal)
             new_search
         else 
-            puts "Sorry...I don't understand that selection, please choose another number!".colorize(:red)
+            puts "Sorry...I don't understand that selection, please make a valid choice!".colorize(:red)
             category_selection
         end    
     end  
